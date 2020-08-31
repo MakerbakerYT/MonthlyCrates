@@ -111,7 +111,7 @@ class MonthlyCrates extends PluginBase implements Listener
     public function MC($player)
     {
         $this->inventory = InvMenu::create(InvMenu::TYPE_DOUBLE_CHEST);
-         $this->inventory->setListener([$this, "handleWarpMenu"]);
+         $this->inventory->setListener([$this, "handleMCMenu"]);
         $this->inventory->readonly();
         $name = self::getInstance()->getConfig()->get("MonthlyCrateName");
         $this->inventory->setName($name);
@@ -310,7 +310,7 @@ class MonthlyCrates extends PluginBase implements Listener
 
     }
     
-    public function handleWarpMenu(Player $player, Item $itemClicked, Item $itemClickedWith, SlotChangeAction $action): bool{
+    public function handleMCMenu(Player $player, Item $itemClicked, Item $itemClickedWith, SlotChangeAction $action): bool{
         
        
        if($itemClicked->getId() === 160 and $itemClicked->getCustomName() === "§l§c???") {
